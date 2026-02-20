@@ -1,10 +1,23 @@
 name: Repository Events
 on: 
-    push:
-    pull_request:
-      types: [opened, assigned, reopened, synchronize]
-    issues:
-      types: [opened]
+  push:
+    branches:
+      - main
+      - "feature/*" # matches any branch that starts with "feature/" #
+      - "feature/**"
+      - "!feature/featA"
+    # branches-ignore:
+    #   - develop
+    tags:
+      - v1.* # match v1.1, v1.1.2
+      - "!v1.1.1"
+    paths:
+      - "**.js"
+      - "!app.js"
+  pull_request:
+    types: [opened, assigned, reopened, synchronize]
+  issues:
+    types: [opened]
 
 jobs:
   checkout-test:
