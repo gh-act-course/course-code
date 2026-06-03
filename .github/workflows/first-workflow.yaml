@@ -16,14 +16,9 @@ jobs:
     steps:
       - name: View SW Version
         run: sw_vers
-  parallel-job-windows:
-    runs-on: windows-latest
-    steps:
-      - name: View Windows Version
-        run: systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
   dependant-job:
     runs-on: windows-latest
-    needs: run-shell-commands
+    needs: parallel-job-macos
     steps:
       - name: Echo a string
         run: Write-Output "Windows String"
