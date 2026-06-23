@@ -1,4 +1,4 @@
-name: Concurrency 
+name: Concurrency 2
 run-name: Concurrency 2 (${{ inputs.enviroment }})
 on:
   workflow_dispatch:
