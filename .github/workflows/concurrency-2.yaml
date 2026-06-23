@@ -1,4 +1,5 @@
-name: Concurrency 2
+name: Concurrency 
+run-name: Concurrency 2 (${{ inputs.enviroment }})
 on:
   workflow_dispatch:
     inputs:
@@ -7,6 +8,9 @@ on:
         type: environment
         required: true
 
+concurrency:
+  group: ${{ github.event.inputs.enviroment }}
+  cancel-in-progress: true
 jobs:
   sleep:
     runs-on: ubuntu-latest
