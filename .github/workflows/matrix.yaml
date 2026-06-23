@@ -1,7 +1,7 @@
 name: Matrix
 on: [push]
 
-#------- ORIGINAL -------#
+#------- ORIGINAL --------#
 # {os: ubuntu-latest, node-version: 14, is ubuntu: true, experimental: false}
 # {os: ubuntu-latest, node-version: 15, is ubuntu: true, experimental: false}
 # {os: ubuntu-latest, node-version: 16, is ubuntu: true, experimental: false}
@@ -13,7 +13,7 @@ on: [push]
 
 jobs:
   node-matrix:
-    continue-on-error: ${{ matrix.experimental == true}}
+    continue-on-error: ${{ matrix.experimental == true }}
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
