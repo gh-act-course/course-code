@@ -4,13 +4,13 @@ on:
     inputs:
       os:
         description: Operation Systems
-        default: "windows-latest,ubuntu-latest"
+        default: "ubuntu-latest"
         type: string
       node-version:
         description: Node Version
         default: "14,15,16"
         type: string
-
+        
 jobs:
   prepare-matrix:
     runs-on: ubuntu-latest
