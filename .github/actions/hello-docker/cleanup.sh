@@ -1,0 +1,2 @@
+#!/bin/shs
+echo 'Cleanup'

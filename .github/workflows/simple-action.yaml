@@ -5,9 +5,10 @@ jobs:
   simple-action:
     runs-on: ubuntu-latest
     steps:
-      - name: Simple JS Action
+      - name: Simple Docker Action
         id: greet
-        uses: actions/hello-world-javascript-action@v1
+        uses: ./github/actions/hello-docker
+        # uses: actions/hello-world-javascript-action@v1
         with:
           who-to-greet: Eduardo
       - name: Log Greeting Time
